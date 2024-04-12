@@ -1,0 +1,10 @@
+package sample;
+
+/**
+ * @author YOUR NAME bxxxxxxx
+ */
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello!");
+    }
+}
