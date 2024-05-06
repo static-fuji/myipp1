@@ -67,7 +67,7 @@ public class ParkingLots {
     public boolean park(int parkNum, int carNum){
         boolean addCarFlag = false;
         if(parkNum >=0 && parkNum < capacity){
-            if(lots[parkNum] == VACANT){
+            if(isVacant() == true){
                 lots[parkNum] = carNum;
                 occupied++;
                 addCarFlag = true;
@@ -100,6 +100,12 @@ public class ParkingLots {
             }
         }
         return parkingFlag;
+    }
+
+    public static ParkingLots addSubLots(ParkingLots p, double n){
+        double newCapacity = (double)p.capacity*n;
+        ParkingLots newParking = new ParkingLots(p.name + "-sub", (int)newCapacity);
+        return newParking;
     }
 
     public String getName(){
