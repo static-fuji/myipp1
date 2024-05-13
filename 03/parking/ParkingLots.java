@@ -27,7 +27,7 @@ public class ParkingLots {
 	    System.out.println("Vacant parking lots: " + (p.getCapacity()-p.getOccupied()));
     }
 
-    ParkingLots(String ParkingName, int ParkingCapa) {
+    public ParkingLots(String ParkingName, int ParkingCapa) {
         name = ParkingName;
         capacity = ParkingCapa;
         occupied = 0;
