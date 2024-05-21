@@ -49,7 +49,7 @@ public class Menu {
 
     public String toString() {
         String s = "Menu::\n";
-        for (Meal i:meals){
+        for (final Meal i:meals){
             if (i.isSoldOut() == false){
                  s = s + "Meal: " + i.toString() + "\n";
             }
@@ -58,7 +58,7 @@ public class Menu {
     }
 
     public Meal getMealByName (String name){
-        for (Meal i:meals){
+        for (final Meal i:meals){
             if (name ==i.getName()){
                 return i;
             }
@@ -69,7 +69,7 @@ public class Menu {
     public Meal getMaxCalorieMeal(int calories){
         Meal maxCalo = new Meal(null,0,0);
         boolean initFlag = true;
-        for (Meal i:meals){
+        for (final Meal i:meals){
             if (initFlag == true && i.getCalories() <= calories){
                 if (i.isSoldOut() == false){
                     maxCalo = i;
