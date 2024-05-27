@@ -1,15 +1,18 @@
 package recursive;
 
 /**
- * @author bxxxxxx name
- *
+ * @author g2124040 藤本陽人
+ * 
  */
 public class PascalTri {
 
 	public int nCr(int n, int r) {
 		
 		//nCrを求める再帰メソッドを実装
-		
+        if (r == 0 || r == n) {
+            return 1;
+        }
+        return nCr(n - 1, r - 1) + nCr(n - 1, r);
 	}
 	
 	public void showSTriangle(int n) {
@@ -29,8 +32,8 @@ public class PascalTri {
 	
 	public static void main(String[] args) {
 
-		int n = 4;
-		int r = 2;
+		int n = 8;
+		int r = 7;
 		
 		PascalTri pas = new PascalTri();
 		
