@@ -6,14 +6,16 @@ import java.util.ArrayList;
  */
 public class GameTest {
 	public static void main(String[] args) {
-		int playerAttackPower = 25;
-		Monster monster1 = new Monster(1);
+		int playerAttackPower = 250;
+		Monster monster1 = new Slime(1);
 		Monster monster2 = new Monster(2);
-		Monster monster3 = new Monster(3);
+		Monster monster3 = new BossDragon(3);
+		Monster monster4 = new LuckySlime(4);
 		ArrayList<Monster> monsterList = new ArrayList<Monster>();
 		monsterList.add(monster1);
 		monsterList.add(monster2);
 		monsterList.add(monster3);
+		monsterList.add(monster4);
 		int numMonster = monsterList.size();
 		for(int i = 0; i < 10;i++) {
 			System.out.println("--------Turn " + (i+1) + "--------");
