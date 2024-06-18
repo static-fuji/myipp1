@@ -14,7 +14,7 @@ public class Player2124040 extends Player {
 	 * ------------------
 	 */
 	public Player2124040(World world) {
-		super(world, '＆', "ジャワ目アンド");
+		super(world, '⬜', "ジャワ目アンド");
 	}
 
 	public boolean seeding() {
