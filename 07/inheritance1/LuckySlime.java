@@ -12,7 +12,7 @@ public class LuckySlime extends Slime {
         this.exp = 8000;
     }
 
-    public void act(){
+    public void action(){
         super.act();
         if(this.currentTurn % 3 == 0) {
             this.hitPoint += 100;
