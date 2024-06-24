@@ -8,7 +8,7 @@ import java.util.*;
  * 
  */
 
-public class  MountainData2 extends MountainData {
+public class  MountainData2 extends MountainData{
 	private final int INDEX_NAME = 1;
 	private final int INDEX_KNAME = 2;
 	private final int INDEX_HEIGHT = 3;
@@ -46,9 +46,28 @@ public class  MountainData2 extends MountainData {
         return totalData + "average: " + this.average + "m";
     }
 
+    public void sortByKname(){
+        Collections.sort(data2, new Comparator<Mountain> () {
+            @Override
+            public int compare(Mountain m1, Mountain m2) {
+                return m1.getKname().compareTo(m2.getKname());
+            }
+        });
+    }
+
+    public void sortByHeight(){
+        Collections.sort(data2, new Comparator<Mountain> () {
+            @Override
+            public int compare(Mountain m1, Mountain m2) {
+                return Integer.valueOf(m2.getHeight()).compareTo(Integer.valueOf(m1.getHeight()));
+            }
+        });
+    }
+
     public static void main(String[] args) {
 		MountainData2 trfd = new MountainData2();
 		trfd.register();
+        trfd.sortByKname();
 		System.out.println(trfd.toString());
 	}
 }

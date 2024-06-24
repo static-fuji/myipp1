@@ -21,4 +21,20 @@ public class Mountain {
 	public String toString() {
 		return name + "(" + location + ") 標高:" + height + "m";
 	}
+
+    public String getName() {
+        return name;
+    }
+
+    public String getKname() {
+        return kname;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }
