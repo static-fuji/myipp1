@@ -1,4 +1,4 @@
-package graph1;
+package graph2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -52,23 +52,28 @@ public class Point {
         }
     }
 
-    public double timeTo(Point p) {
+    public double timeTo(Point p, ArrayList<Point> pList) {
         double minTime = Double.MAX_VALUE;
         boolean found = false;
 
+        pList.add(this);
+
         if (this.id == p.id) {
+            System.out.println(pList);
+            pList.remove(pList.size()-1);
             return 0;
         }
 
         if (p.equals(null)){
+            pList.remove(pList.size()-1);
             return -1;
         }
+
         for (Point point : map.keySet()) {
             
             double directTime = map.get(point);
-            double recursiveTime = point.timeTo(p);
+            double recursiveTime = point.timeTo(p, new ArrayList<>(pList));
 
-            // 再帰呼び出しが-1を返した場合
             if (recursiveTime == -1) {
                 continue;
             }
@@ -77,7 +82,7 @@ public class Point {
             minTime = Math.min(minTime, totalTime);
             found = true;
         }
-
+        pList.remove(pList.size() - 1);
         return found ? minTime : -1;
     }
  
