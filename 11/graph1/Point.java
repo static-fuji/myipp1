@@ -60,9 +60,6 @@ public class Point {
             return 0;
         }
 
-        if (p.equals(null)){
-            return -1;
-        }
         for (Point point : map.keySet()) {
             
             double directTime = map.get(point);

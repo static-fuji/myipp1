@@ -60,13 +60,8 @@ public class Point {
 
         if (this.id == p.id) {
             System.out.println(pList);
-            pList.remove(pList.size()-1);
+            pList.remove(this);
             return 0;
-        }
-
-        if (p.equals(null)){
-            pList.remove(pList.size()-1);
-            return -1;
         }
 
         for (Point point : map.keySet()) {
@@ -82,7 +77,7 @@ public class Point {
             minTime = Math.min(minTime, totalTime);
             found = true;
         }
-        pList.remove(pList.size() - 1);
+        pList.remove(this);
         return found ? minTime : -1;
     }
  
